@@ -12,6 +12,10 @@ const AppSchema = new Schema({
         type: String,
         required: true
     },
+    author:{
+        type: String,
+        required: false
+    },
     date: {
         type: Date,
         default: Date.now()
