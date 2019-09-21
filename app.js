@@ -123,17 +123,15 @@ app.get('/search', (req, res) => {
            
         });
         if(findShit.length > 0){
+            req.flash('success_msg', 'Search Results');
             res.render('ideas/index', {
                 ideas: findShit
             });
         }
         else {
+            req.flash('error_msg', 'Unable to fin results');
             res.render('ideas/index', {
-                ideas: [{
-                    title: '',
-                    details:'',
-                    author: '',
-                }]
+                ideas: []
             });
         }
         
